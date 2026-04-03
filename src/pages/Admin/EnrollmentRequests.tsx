@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { backend } from '../../data/mockBackend';
-import { Loader2, CheckCircle, XCircle, Phone, Mail } from 'lucide-react';
+import { Loader2, CheckCircle, XCircle, Phone } from 'lucide-react';
 
 const EnrollmentRequests = () => {
   const [requests, setRequests] = useState<any[]>([]);

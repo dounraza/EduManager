@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate, Outlet } from 'react-router-dom';
 import { LayoutDashboard, Users, UserCheck, Calendar, BookOpen, GraduationCap, Home, Bell, Search, Settings, FileText, LogOut, User as UserIcon, ChevronDown } from 'lucide-react';
 import { useAuth } from '../../data/AuthContext';
@@ -87,7 +87,7 @@ const AdminDashboard = () => {
               >
                 {item.icon}
                 <span style={{ fontSize: '0.95rem' }}>{item.label}</span>
-                {item.badge > 0 && (
+                {item.badge !== undefined && item.badge > 0 && (
                   <span style={{ 
                     position: 'absolute', right: '12px', background: 'var(--accent)', 
                     color: 'white', fontSize: '0.7rem', padding: '2px 6px', 

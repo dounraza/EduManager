@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Users, GraduationCap, Calendar, BookOpen, Loader2 } from 'lucide-react';
 import { backend } from '../../data/mockBackend';
-import { teachers } from '../../data/mockData';
 import type { Student, SchoolClass } from '../../data/mockData';
 
 const Overview = () => {

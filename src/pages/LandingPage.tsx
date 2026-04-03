@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Users, Calendar, ArrowRight, ShieldCheck, Zap, Globe, Star, PlayCircle, User as UserIcon } from 'lucide-react';
+import { GraduationCap, Users, Calendar, ArrowRight, ShieldCheck, Zap, Star, PlayCircle, User as UserIcon } from 'lucide-react';
 import { useAuth } from '../data/AuthContext';
 import { backend } from '../data/mockBackend';
 

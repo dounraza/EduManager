@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, FormEvent } from 'react';
 import { backend } from '../../data/mockBackend';
-import { Loader2, X, Users, Calendar, ArrowLeft, Trash2, Mail, Phone } from 'lucide-react';
-import type { Student, SchoolClass, TimetableEntry, Teacher } from '../../data/mockData';
+import { Loader2, X, Users, Calendar, ArrowLeft, Phone } from 'lucide-react';
+import type { Student, SchoolClass, TimetableEntry } from '../../data/mockData';
 
 const ClassesList = () => {
   const [classes, setClasses] = useState<SchoolClass[]>([]);
@@ -53,7 +53,7 @@ const ClassesList = () => {
     }
   };
 
-  const handleAddClass = async (e: React.FormEvent) => {
+  const handleAddClass = async (e: FormEvent) => {
     e.preventDefault();
     try {
       await backend.addClass(newClass);
@@ -139,14 +139,14 @@ const ClassesList = () => {
                   {classData.timetable
                     .filter(t => t.day === day)
                     .sort((a, b) => {
-                      const timeA = a.startTime || a.start_time || '00:00';
-                      const timeB = b.startTime || b.start_time || '00:00';
+                      const timeA = (a as any).startTime || (a as any).start_time || '00:00';
+                      const timeB = (b as any).startTime || (b as any).start_time || '00:00';
                       return timeA.localeCompare(timeB);
                     })
                     .map(entry => (
                     <div key={entry.id} style={{ padding: '12px', border: '1px solid var(--border)', borderRadius: '12px', marginBottom: '10px', background: 'white', borderLeft: '4px solid var(--primary)', position: 'relative' }}>
                       <p style={{ fontWeight: '800', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                        {formatTime(entry.startTime || entry.start_time)} - {formatTime(entry.endTime || entry.end_time)}
+                        {formatTime((entry as any).startTime || (entry as any).start_time)} - {formatTime((entry as any).endTime || (entry as any).end_time)}
                       </p>
                       <p style={{ fontWeight: '700', margin: '4px 0' }}>{entry.subject || (entry as any).subjects?.name || 'Matière'}</p>
                       <p style={{ fontSize: '0.8rem', color: 'var(--primary)' }}>{entry.teacher || (entry as any).teachers?.last_name || 'Prof'}</p>

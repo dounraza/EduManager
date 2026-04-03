@@ -1,4 +1,4 @@
-import type { Student, SchoolClass, TimetableEntry, Teacher } from './mockData';
+import type { SchoolClass, TimetableEntry } from './mockData';
 import { initialStudents, initialClasses, initialTimetables } from './mockData';
 import { realBackend } from './realBackend';
 
