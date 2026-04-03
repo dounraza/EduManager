@@ -1,4 +1,5 @@
-import { useEffect, useState, FormEvent } from 'react';
+import { useEffect, useState } from 'react';
+import type { FormEvent } from 'react';
 import { backend } from '../../data/mockBackend';
 import { Loader2, X, Users, Calendar, ArrowLeft, Phone } from 'lucide-react';
 import type { Student, SchoolClass, TimetableEntry } from '../../data/mockData';
